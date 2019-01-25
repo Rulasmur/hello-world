@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "4b612895-e5c5-462a-8d24-190c4f916f3d",
+		"name": "Hello World",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8180/hello-world?key=01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"hello-world"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8180/hello-world?key=01&value=Andreas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"hello-world"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "01"
+						},
+						{
+							"key": "value",
+							"value": "Andreas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8180/hello-world?key=01&value=Thomas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"hello-world"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "01"
+						},
+						{
+							"key": "value",
+							"value": "Thomas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8180/hello-world?key=01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"hello-world"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "01"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
