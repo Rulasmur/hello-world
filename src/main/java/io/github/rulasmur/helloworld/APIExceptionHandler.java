@@ -23,21 +23,24 @@ public class APIExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleExists(RuntimeException ex, WebRequest request) {
 
         String message = "Unknown";
+        HttpStatus status = HttpStatus.BAD_REQUEST;
         if(ex instanceof APIExistsException)
         {
             message = "Key Exists";
+
         }else if(ex instanceof APIInvalidParameterException)
         {
             message = "Parameter cannot be null";
         }else if(ex instanceof APINotFoundException)
         {
             message = "Key does not exists";
+            status = HttpStatus.NOT_FOUND;
         }
 
-        return getGenericResponse(message);
+        return getGenericResponse(message, status);
     }
 
-    private ResponseEntity<Object> getGenericResponse(String message) {
+    private ResponseEntity<Object> getGenericResponse(String message, HttpStatus status) {
         ObjectMapper mapper = new ObjectMapper();
         String jsonResult = "";
         try {
@@ -45,7 +48,7 @@ public class APIExceptionHandler extends ResponseEntityExceptionHandler {
         } catch (JsonProcessingException e) {
             log.error("Failed to create json", e);
         }
-        return new ResponseEntity<>(jsonResult, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(jsonResult, status);
     }
 
 

@@ -4,6 +4,7 @@ import io.github.rulasmur.helloworld.api.models.APIMessage;
 import io.github.rulasmur.helloworld.exceptions.APIExistsException;
 import io.github.rulasmur.helloworld.exceptions.APIInvalidParameterException;
 import io.github.rulasmur.helloworld.exceptions.APINotFoundException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -46,6 +47,7 @@ public class HelloWorldController {
     }
 
     @PostMapping("/hello-world")
+    @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestParam String key, @RequestParam String value)
     {
         if(key == null || value == null)
